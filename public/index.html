@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script>
+  <title>JWT Example</title>
+</head>
+
+<body ng-controller="MainController as Mc">
+  <h1>Get Random User</h1>
+
+  <div>
+    <form ng-submit="Mc.login(Mc.username, Mc.password)">
+      <label for="username">username:</label>
+      <input id="username" type="text" ng-model="Mc.username">
+      <label for="password">password:</label>
+      <input id="password" ng-model="Mc.password" type="password">
+      <button type="submit">Login</button>
+    </form>
+    <br>
+    <button ng-click="Mc.logout()">Logout</button>
+  </div>
+  <br>
+  <br>
+  <br>
+  <div>
+    <button ng-click="Mc.getRandomUser()">Get User</button>
+    <pre ng-bind="Mc.randomUser"></pre>
+  </div>
+  <script src="app.js"></script>
+</body>
+
+</html>
